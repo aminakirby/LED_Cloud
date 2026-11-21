@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>LED Cloud Web UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body style="background-color:#777777">
+    <h1>LED Cloud Web UI</h1>
+    <h3><b>Set WiFi Network</b></h3>
+    <form action="/get">
+      <input type="text" name="SSID" size="10" maxlength="100"> SSID<br>
+      <input type="text" name="Password" size="10" maxlength="100"> Password<br><br>
+      <b>Static IP (leave blank for DHCP & Purple Air AQI)</b><br>
+      <input type="number" name="ip_1" min="0" max="255" size="3"> . <input type="number" name="ip_2" min="0" max="255" size="3"> . <input type="number" name="ip_3" min="0" max="255" size="3"> . <input type="number" name="ip_4" min="0" max="255" size="3"> IP<br>
+      <input type="number" name="subnet_1" min="0" max="255" size="3"> . <input type="number" name="subnet_2" min="0" max="255" size="3"> . <input type="number" name="subnet_3" min="0" max="255" size="3"> . <input type="number" name="subnet_4" min="0" max="255" size="3"> Subnet<br>
+      <input type="number" name="gateway_1" min="0" max="255" size="3"> . <input type="number" name="gateway_2" min="0" max="255" size="3"> . <input type="number" name="gateway_3" min="0" max="255" size="3"> . <input type="number" name="gateway_4" min="0" max="255" size="3"> Gateway<br>
+      <input type="number" name="dns_1" min="0" max="255" size="3"> . <input type="number" name="dns_2" min="0" max="255" size="3"> . <input type="number" name="dns_3" min="0" max="255" size="3"> . <input type="number" name="dns_4" min="0" max="255" size="3"> DNS<br><br>  
+      <input type="submit" value="Submit" onclick="alert('Network settings changed. Please restart to join new network.')"><br>
+    </form>
+    <h4>______________________________</h4>
+    <h3><b>Set Mode</b></h3>
+    <form action="/mode">
+      <input type="radio" name="mode" id="mode" value="0"><label for="mode" value="0">sACN</label><br>
+      <input type="radio" name="mode" id="mode" value="1"><label for="mode" value="1">PurpleAir AQI</label><br>
+      <input type="radio" name="mode" id="mode" value="2"><label for="mode" value="2">Color Selector</label><br><br>
+      <input type="number" name="universe" min="1" max="63999" size="5" value="1"> sACN Universe # (1 - 63999)<br>
+      <input type="number" name="sensor_id" min="0" max="999999" size="5" value="0"> PurpleAir Sensor # (0 - 999999)<br><br>
+      <input type="submit" value="Submit" onclick="alert('Mode settings changed. Please restart for settings to take effect.')"><br><br>
+    </form>
+    <b>Color Selector Color</b><br>
+    <form action="/color">
+      <input type="radio" name="color" id="color" value="0"><label for="color" value="0">Red</label>
+      <input type="radio" name="color" id="color" value="1"><label for="color" value="1">Orange</label>
+      <input type="radio" name="color" id="color" value="2"><label for="color" value="2">Yellow</label>
+      <input type="radio" name="color" id="color" value="3"><label for="color" value="3">Green</label><br>
+      <input type="radio" name="color" id="color" value="4"><label for="color" value="4">Blue</label>
+      <input type="radio" name="color" id="color" value="5"><label for="color" value="5">Indigo</label>
+      <input type="radio" name="color" id="color" value="6"><label for="color" value="6">Purple</label>
+      <input type="radio" name="color" id="color" value="7"><label for="color" value="7">Pink</label><br>
+      <input type="radio" name="color" id="color" value="8"><label for="color" value="8">Rainbow</label><br><br>
+      <input type="submit" value="Set" onclick="alert('Color changed.')"><br>
+    </form>
+    <h4>______________________________</h4>
+    <h3><b>Utility</b></h3>
+    <form action="/clear">
+      <input type="submit" value="Clear Settings" onclick="alert('Settings cleared. Please restart to enable access point.')">
+    </form><br>
+    <form action="/restart">
+      <input type="submit" value="Restart">
+    </form><br>
+  </body>
+</html>
+)rawliteral";
